@@ -386,30 +386,56 @@ h1 {
 }
 
 .about__heading {
+  margin: 0 0 40px;
   font-size: 3.75em;
   font-weight: 600;
   line-height: 125%;
 }
 
 .about__gallery {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
 }
 
 .gallery {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 40px;
-}
-
-.about__gallery img {
-  border-radius: 20px;
 }
 
 .about__item {
   margin: 0;
+}
+
+.about__gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .about__gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery__col--one .about__item:nth-child(2),
+  .gallery__col--two .about__item:nth-child(1) {
+    display: none;
+  }
+
+  .about__gallery img {
+    height: 590px;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 480px) {
+  .about__heading {
+    font-size: 2em;
+  }
 }
 
 /* -------------------  Mobile apps section ---------- */
