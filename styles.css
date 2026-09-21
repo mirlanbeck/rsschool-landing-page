@@ -730,7 +730,7 @@ h1 {
 
 .menu-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 310px);
+  grid-template-columns: repeat(auto-fill, minmax(min(310px, 100%), 310px));
   justify-content: center;
   gap: 40px;
 }
@@ -840,4 +840,21 @@ h1 {
     padding: 8px 12px 8px 8px;
     font-size: 0.875em;
   }
+}
+
+/*--------------- Accessibility ------------------ */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--text-dark);
+  outline-offset: 3px;
+}
+
+.footer a:focus-visible {
+  outline-color: var(--text-light);
+}
+
+.menu-link[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 6px;
 }
