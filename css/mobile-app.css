@@ -11,7 +11,7 @@
   gap: 40px;
   font-family: var(--font);
   font-style: normal;
-  color: var(--text-dark);
+  color: var(--color-text);
 }
 
 .mobile-app__info {
@@ -77,9 +77,9 @@
   gap: 12px;
   width: 200px; /* per design panel */
   padding: 12px 20px;
-  border: 1px solid var(--border-dark);
+  border: 1px solid var(--color-border-strong);
   border-radius: 100px;
-  color: var(--text-dark);
+  color: var(--color-text);
   background: transparent;
   transition:
     background 0.2s ease,
@@ -87,7 +87,7 @@
     border-color 0.2s ease;
 }
 
-.store img {
+.store__icon {
   width: 32px;
   height: 32px;
   flex: 0 0 32px;
@@ -112,11 +112,7 @@
 /* Hover/active */
 .store:hover,
 .store:focus-visible {
-  background: var(--border-dark);
-  color: var(--text-light);
+  background: var(--color-hover-bg);
+  color: var(--color-hover-text);
   outline: none;
-}
-.store:hover img,
-.store:focus-visible img {
-  filter: brightness(0) invert(1);
 }

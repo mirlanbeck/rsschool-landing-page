@@ -7,7 +7,7 @@
 .about__inner {
   font-family: var(--font);
   font-style: normal;
-  color: var(--text-dark);
+  color: var(--color-text);
 
   display: flex;
   max-width: 1360px;

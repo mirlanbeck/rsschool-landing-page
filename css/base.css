@@ -20,7 +20,8 @@ body {
   font-optical-sizing: none;
   padding: 20px 0 40px 0;
   border-radius: 8px;
-  background: var(--background-body);
+  background: var(--color-bg);
+  color: var(--color-text);
 }
 
 button {
@@ -38,13 +39,21 @@ a {
 }
 
 .heading__italic {
-  color: var(--text-accent);
+  color: var(--color-accent);
   font-style: italic;
 }
 
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--text-dark);
+  outline: 2px solid var(--color-text);
   outline-offset: 3px;
+}
+
+/* inline SVG symbol sprite: never rendered itself */
+.sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }

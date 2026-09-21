@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="theme.js"></script>
     <title>Coffee house</title>
     <link rel="icon" type="image/png" href="assets/logo.png">
     <link rel="stylesheet" href="css/tokens.css">
@@ -23,11 +24,28 @@
 </head>
 
 <body>
+    <svg class="sprite" aria-hidden="true" focusable="false">
+        <symbol id="icon-cup" viewBox="0 0 20 20"><path d="M14.167 9.76667V11.6667C14.167 14.8883 11.5553 17.5 8.33366 17.5C5.112 17.5 2.50033 14.8883 2.50033 11.6667V9.76667C2.50033 9.4353 2.76896 9.16667 3.10033 9.16667H13.567C13.8984 9.16667 14.167 9.4353 14.167 9.76667Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10.0003 7.50008C10.0003 6.66675 10.5956 5.83341 11.786 5.83341C13.101 5.83341 14.167 4.76743 14.167 3.45246V2.91675" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.66634 7.5V7.08333C6.66634 5.70262 7.78563 4.58333 9.16634 4.58333C10.0868 4.58333 10.833 3.83714 10.833 2.91667V2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13.333 9.16675H15.4163C16.5669 9.16675 17.4997 10.0995 17.4997 11.2501C17.4997 12.4007 16.5669 13.3334 15.4163 13.3334H14.1663" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+        <symbol id="icon-arrow-left" viewBox="0 0 24 24"><path d="M18.5 12H6M6 12L12 6M6 12L12 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+        <symbol id="icon-arrow-right" viewBox="0 0 24 24"><path d="M6 12H18.5M18.5 12L12.5 6M18.5 12L12.5 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+        <symbol id="icon-apple" viewBox="0 0 36 36"><path d="M26.7073 18.6307C26.6704 14.6324 30.065 12.6872 30.2203 12.5966C28.2977 9.86366 25.3178 9.49026 24.2707 9.46048C21.7679 9.20369 19.3403 10.9206 18.0654 10.9206C16.765 10.9206 14.8017 9.48529 12.6858 9.52747C9.96293 9.56841 7.41566 11.1055 6.0186 13.4923C3.13542 18.359 5.28572 25.5108 8.04802 29.4446C9.42981 31.3712 11.0444 33.5223 13.1578 33.4466C15.2254 33.3635 15.9978 32.1614 18.4929 32.1614C20.9651 32.1614 21.6903 33.4466 23.8457 33.3983C26.0647 33.3635 27.4618 31.463 28.7952 29.519C30.392 27.3108 31.0333 25.1362 31.0588 25.0245C31.0066 25.0071 26.7493 23.4229 26.7073 18.6307Z" fill="currentColor"/>
+<path d="M22.6357 6.87268C23.7477 5.51675 24.5086 3.67205 24.2974 1.80005C22.6879 1.86952 20.675 2.88554 19.5159 4.21169C18.4903 5.38029 17.5742 7.29571 17.8109 9.097C19.6189 9.2285 21.4753 8.20752 22.6357 6.87268Z" fill="currentColor"/></symbol>
+        <symbol id="icon-play" viewBox="0 0 36 36"><path d="M3.7558 3.20297C3.39335 3.57289 3.18359 4.14884 3.18359 4.89471V31.4994C3.18359 32.2453 3.39335 32.8212 3.7558 33.1911L3.84525 33.2723L19.1359 18.37V18.0181L3.84525 3.11575L3.7558 3.20297Z" fill="currentColor"/>
+<path d="M26.0776 23.34L20.9863 18.37V18.0181L26.0837 13.0482L26.1979 13.1128L32.2345 16.4617C33.9573 17.4121 33.9573 18.976 32.2345 19.9324L26.1979 23.2753L26.0776 23.34Z" fill="currentColor"/>
+<path d="M25.2733 24.2007L20.0617 19.1195L4.68164 34.1166C5.25384 34.7031 6.18695 34.7737 7.24807 34.1873L25.2733 24.2007Z" fill="currentColor"/>
+<path d="M25.2733 12.1876L7.24807 2.20103C6.18695 1.62058 5.25384 1.69125 4.68164 2.27772L20.0617 17.2688L25.2733 12.1876Z" fill="currentColor"/></symbol>
+        <symbol id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5" /><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></symbol>
+        <symbol id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></symbol>
+    </svg>
     <header class="header">
         <div class="container">
             <div class="header-inner">
                 <a class="logo" href="index.html" aria-label="Resource Coffee House, home">
-                    <img src="assets/logo.png" alt="">
+                    <img class="logo__img logo__img--light" src="assets/logo.png" alt="" width="100" height="60">
+                    <img class="logo__img logo__img--dark" src="assets/logo-dark.png" alt="" width="100" height="60">
                 </a>
                 <nav class="navbar">
                     <ul class="nav-list">
@@ -37,8 +55,13 @@
                         <li class="nav-item"><a href="#contacts">Contact us</a></li>
                     </ul>
                 </nav>
-                <a class="menu-link" href="menu.html">Menu
-                    <img src="assets/coffee-cup.svg" alt="">
+                <div class="header__actions">
+                    <button class="theme-toggle" type="button" aria-label="Dark theme" aria-pressed="false">
+                        <svg class="theme-toggle__icon theme-toggle__icon--sun" width="24" height="24" aria-hidden="true"><use href="#icon-sun" /></svg>
+                        <svg class="theme-toggle__icon theme-toggle__icon--moon" width="24" height="24" aria-hidden="true"><use href="#icon-moon" /></svg>
+                    </button>
+                    <a class="menu-link" href="menu.html">Menu
+                    <svg class="icon" width="20" height="20" aria-hidden="true"><use href="#icon-cup" /></svg>
                 </a>
                 <button class="burger" type="button" aria-label="Open menu" aria-expanded="false">
                     <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
@@ -49,6 +72,7 @@
                             stroke-width="1.5" stroke-linecap="round" />
                     </svg>
                 </button>
+                </div>
             </div>
         </div>
     </header>
@@ -62,7 +86,7 @@
                         Resource is a popular destination for coffee lovers and those seeking a warm and inviting space
                         to enjoy their favorite beverage.</p>
                     <a href="menu.html" class="btn">Menu
-                        <img class="btn__icon" src="assets/coffee-cup.svg" alt="">
+                        <svg class="btn__icon" width="24" height="24" aria-hidden="true"><use href="#icon-cup" /></svg>
                     </a>
                 </div>
             </section>
@@ -70,8 +94,7 @@
                 <div class="favorite__inner">
                     <h2 class="slider__heading">Choose your<span class="heading__italic"> favorite </span>coffee</h2>
                     <div class="slider__viewport">
-                        <button type="button" class="slider__arrow slider__arrow--prev" aria-label="Previous slide"><img
-                                src="assets/arrow-left.svg" alt=""></button>
+                        <button type="button" class="slider__arrow slider__arrow--prev" aria-label="Previous slide"><svg class="icon" width="24" height="24" aria-hidden="true"><use href="#icon-arrow-left" /></svg></button>
                         <div class="slider__track">
                             <article class="slide" id="slide1">
                                 <img src="assets/coffee-slider-1.png" alt="Iced S’mores Frappuccino in a tall glass" class="card__image">
@@ -92,8 +115,7 @@
                                 <p class="card__price">$4.50</p>
                             </article>
                         </div>
-                        <button type="button" class="slider__arrow slider__arrow--next" aria-label="Next slide"><img
-                                src="assets/arrow-right.svg" alt=""></button>
+                        <button type="button" class="slider__arrow slider__arrow--next" aria-label="Next slide"><svg class="icon" width="24" height="24" aria-hidden="true"><use href="#icon-arrow-right" /></svg></button>
                     </div>
                     <div class="slider__bullets">
                         <button type="button" class="bullet" aria-label="Slide 1" aria-current="true"><span
@@ -140,7 +162,7 @@
                             ordering your favorite coffee from wherever you are</p>
                         <div class="mobile-app__stores">
                             <a href="https://www.apple.com/app-store/" class="store">
-                                <img src="assets/apple-icon.svg" alt="">
+                                <svg class="store__icon" width="32" height="32" aria-hidden="true"><use href="#icon-apple" /></svg>
                                 <div class="store__text">
                                     <span class="available__info">
                                         Available on the
@@ -151,7 +173,7 @@
                                 </div>
                             </a>
                             <a href="https://play.google.com/store/apps?hl=en" class="store">
-                                <img src="assets/playmarket-icon.svg" alt="">
+                                <svg class="store__icon" width="32" height="32" aria-hidden="true"><use href="#icon-play" /></svg>
                                 <div class="store__text">
                                     <span class="available__info">
                                         Available on

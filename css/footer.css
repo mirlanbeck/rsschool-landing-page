@@ -8,8 +8,8 @@
   margin-top: 100px;
   padding: 100px;
   border-radius: 40px;
-  background: var(--background-container);
-  color: var(--text-light);
+  background: var(--color-surface-dark);
+  color: var(--color-on-dark);
 }
 
 .footer__heading {
@@ -21,12 +21,12 @@
 
 .heading__accent {
   display: block;
-  color: var(--text-accent);
+  color: var(--color-accent);
   font-style: italic;
 }
 
 .heading__light {
-  color: var(--text-light);
+  color: var(--color-on-dark);
 }
 
 .social {
@@ -40,9 +40,9 @@
   justify-content: center;
   width: 60px;
   height: 60px;
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--color-on-dark-border);
   border-radius: 50%;
-  color: var(--border-light);
+  color: var(--color-on-dark-border);
   transition:
     background-color 0.2s ease,
     color 0.2s ease;
@@ -50,8 +50,8 @@
 
 .social__link:hover,
 .social__link:focus-visible {
-  background: var(--text-light);
-  color: var(--border-dark);
+  background: var(--color-on-dark);
+  color: var(--color-surface-dark);
 }
 
 .contact__title {
@@ -74,7 +74,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--text-light);
+  color: var(--color-on-dark);
 }
 
 .contact__link:hover,
@@ -114,5 +114,5 @@
 }
 
 .footer a:focus-visible {
-  outline-color: var(--text-light);
+  outline-color: var(--color-on-dark);
 }
