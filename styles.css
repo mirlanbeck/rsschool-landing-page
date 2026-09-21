@@ -30,6 +30,7 @@ html {
 body {
   margin: 0;
   font-family: var(--font);
+  font-optical-sizing: none;
   padding: 20px 0 40px 0;
   border-radius: 8px;
   background: var(--Background-Body, #e1d4c9);
@@ -202,7 +203,14 @@ h1 {
 
 @media (max-width: 768px) {
   .enjoy-inner {
-    padding: clamp(60px, 8vw, 100px) clamp(16px, 11.3vw - 27px, 60px);
+    padding: clamp(60px, 20.8px + 10.3vw, 100px) clamp(16px, 11.3vw - 27px, 60px);
+  }
+
+  /* no hover on touch layouts, so the cup icon is always shown (as in the mockups) */
+  .btn__icon {
+    position: static;
+    margin-left: 12px;
+    opacity: 1;
   }
 }
 
@@ -211,19 +219,10 @@ h1 {
     --gutter: 16px;
   }
 
-  .btn__icon {
-    position: static;
-    margin-left: 12px;
-    opacity: 1;
-  }
-
   h1 {
     line-height: 115%;
   }
 
-  .enjoy-text {
-    padding: 24px 0;
-  }
 }
 
 /* ----------------------------------- */
@@ -387,6 +386,13 @@ h1 {
   line-height: 125%;
 }
 
+@media (min-width: 1201px) {
+  /* keeps the 1440px heading on three lines like the mockup */
+  .about__heading {
+    letter-spacing: -0.005em;
+  }
+}
+
 .about__gallery {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -464,7 +470,7 @@ h1 {
 
 .mobile-app__art {
   width: 100%;
-  max-width: 720px;
+  max-width: 640px;
   margin-inline: auto;
 }
 
@@ -502,7 +508,7 @@ h1 {
 .store {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   width: 200px; /* per design panel */
   padding: 12px 20px;
   border: 1px solid var(--border-dark);
@@ -516,9 +522,9 @@ h1 {
 }
 
 .store img {
-  width: 24px;
-  height: 24px;
-  flex: 0 0 24px;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
 }
 
 .store__text {
@@ -553,7 +559,7 @@ h1 {
 
 .footer__inner {
   display: grid;
-  grid-template-columns: minmax(0, 530px) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 630px) minmax(0, 1fr);
   align-items: center;
   max-width: 1360px;
   margin-top: 100px;
@@ -606,7 +612,7 @@ h1 {
 }
 
 .contact__title {
-  margin: 0 0 32px;
+  margin: 0 0 40px;
   font-size: 1.5em;
   font-weight: 600;
   line-height: 125%;
@@ -622,7 +628,7 @@ h1 {
 
 .contact__link,
 .contact__item {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 8px;
   color: var(--text-light);
@@ -636,6 +642,7 @@ h1 {
 
 @media (max-width: 1200px) {
   .footer__inner {
+    grid-template-columns: minmax(0, 530px) minmax(0, 1fr);
     padding-inline: 60px;
   }
 }
@@ -643,7 +650,7 @@ h1 {
 @media (max-width: 1000px) {
   .footer__inner {
     grid-template-columns: minmax(0, 1fr);
-    gap: 60px;
+    gap: clamp(40px, 15.46vw - 18.75px, 100px);
     align-items: start;
   }
 }
@@ -651,22 +658,22 @@ h1 {
 @media (max-width: 480px) {
   .footer__inner {
     padding: 60px 16px;
-    gap: 40px;
+  }
+
+  .footer__heading {
+    letter-spacing: -0.01em;
   }
 
   .heading__accent {
     display: inline;
   }
 
-  .contact__title {
-    margin-bottom: 24px;
-  }
 }
 
 /*--------------- Menu page ------------------ */
 
 .menu__title {
-  max-width: 760px;
+  max-width: 780px;
   margin: 0 auto 40px;
   color: var(--text-dark);
   font-size: var(--fs-h2);
@@ -800,9 +807,35 @@ h1 {
   color: var(--text-light);
 }
 
+/* between ~500px and ~740px a fixed 310px card fits only once per row,
+   so switch to two fluid columns and scale the card contents down */
+@media (min-width: 500px) and (max-width: 739px) {
+  .menu-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .menu-card {
+    border-radius: 28px;
+  }
+
+  .menu-card__img {
+    border-radius: 28px;
+  }
+
+  .menu-card__body {
+    padding: 16px;
+  }
+
+  .menu-card__title,
+  .menu-card__price {
+    font-size: 1.25em;
+  }
+}
+
 @media (max-width: 768px) {
   .menu__title {
-    max-width: 640px;
+    max-width: 680px;
   }
 
   .menu-list__item:nth-child(n + 5) {
