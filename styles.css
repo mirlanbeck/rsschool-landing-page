@@ -2,7 +2,7 @@
   --background-body: #e1d4c9;
   --container-max: 1440px;
   --gutter: 40px;
-  --font: Inter;
+  --font: "Inter", sans-serif;
   --text-dark: #483d3d;
   --text-accent: #b0907a;
   --text-light: #e1d4c9;
@@ -25,13 +25,21 @@ html {
 }
 
 body {
+  margin: 0;
+  font-family: var(--font);
   padding: 20px 0 40px 0;
   border-radius: 8px;
   background: var(--Background-Body, #e1d4c9);
 }
 
+button {
+  font: inherit;
+}
+
 ul {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -177,7 +185,7 @@ h1 {
 
 .btn__icon {
   position: absolute;
-  right: 56px;
+  right: 44px;
   width: 24px;
   height: 24px;
   opacity: 0;
@@ -201,6 +209,8 @@ h1 {
   }
 
   .btn__icon {
+    position: static;
+    margin-left: 12px;
     opacity: 1;
   }
 
