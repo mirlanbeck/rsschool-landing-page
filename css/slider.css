@@ -62,9 +62,6 @@
   flex-wrap: nowrap;
   transition: transform 300ms ease-out;
   z-index: 0;
-  /* justify-content: center;
-  min-width: 480px;
-  max-width: 1150px; */
 }
 
 .slide {

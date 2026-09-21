@@ -1,4 +1,4 @@
-//****** State ***********/
+// State
 
 let currentIndex = 0;
 const durationMs = 4000;
@@ -59,7 +59,6 @@ function goToSlide(index) {
     }
   });
   renderProgress();
-  //   console.log(currentIndex, elapsedMs);
   renderSlidePosition();
 }
 
