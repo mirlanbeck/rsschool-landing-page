@@ -1,0 +1,33 @@
+/* Design tokens: colors, fluid type scale, layout. Values come from the Figma style guide. */
+
+:root {
+  /* layout */
+  --container-max: 1440px;
+  --gutter: 40px;
+
+  /* typography */
+  --font: "Inter", sans-serif;
+  /* fluid type: 32px/42px at 380px viewport -> 60px/72px at 768px, capped above */
+  --fs-h1: clamp(2.625rem, 12.6px + 7.73vw, 4.5rem);
+  --fs-h2: clamp(2rem, 4.56px + 7.22vw, 3.75rem);
+
+  /* text */
+  --text-dark: #403f3d;
+  --text-light: #e1d4c9;
+  --text-accent: #b0907a;
+
+  /* background */
+  --background-body: #e1d4c9;
+  --background-container: #665f55;
+  --background-backdrop: rgb(64 63 61 / 0.8); /* #403f3d at 80% opacity, overlays */
+
+  /* border */
+  --border-light: #c1b6ad;
+  --border-dark: #665f55;
+}
+
+@media (max-width: 480px) {
+  :root {
+    --gutter: 16px;
+  }
+}

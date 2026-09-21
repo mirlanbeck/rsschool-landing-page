@@ -1,0 +1,69 @@
+/* About section with photo gallery (home page). */
+
+.about__section {
+  margin-top: 100px;
+}
+
+.about__inner {
+  font-family: var(--font);
+  font-style: normal;
+  color: var(--text-dark);
+
+  display: flex;
+  max-width: 1360px;
+  flex-direction: column;
+}
+
+.about__heading {
+  margin: 0 0 40px;
+  font-size: var(--fs-h2);
+  font-weight: 600;
+  line-height: 125%;
+}
+
+@media (min-width: 1201px) {
+  /* keeps the 1440px heading on three lines like the mockup */
+  .about__heading {
+    letter-spacing: -0.005em;
+  }
+}
+
+.about__gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.about__item {
+  margin: 0;
+}
+
+.about__gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .about__gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery__col--one .about__item:nth-child(2),
+  .gallery__col--two .about__item:nth-child(1) {
+    display: none;
+  }
+
+  .about__gallery img {
+    height: 590px;
+    object-fit: cover;
+  }
+}

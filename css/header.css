@@ -1,0 +1,84 @@
+/* Header: logo, navigation, Menu link, burger button (shared by both pages). */
+
+.header-inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+}
+
+.navbar {
+  justify-self: center;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 40px);
+}
+
+.nav-item {
+  font-family: var(--font);
+  font-size: 1em;
+}
+
+.header-inner a {
+  color: var(--text-dark);
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.logo {
+  display: inline-flex;
+}
+
+.menu-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-underline-offset: 6px;
+}
+
+.menu-link:hover,
+.nav-item a:hover {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.burger {
+  display: none;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+.burger__close,
+.burger[aria-expanded="true"] .burger__lines {
+  display: none;
+}
+
+.burger[aria-expanded="true"] .burger__close {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .navbar,
+  .menu-link {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .header-inner {
+    grid-template-columns: 1fr auto;
+  }
+}
+
+.menu-link[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
