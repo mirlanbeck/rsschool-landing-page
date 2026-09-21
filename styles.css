@@ -444,12 +444,13 @@ h1 {
 }
 
 .mobile-app__inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 640px);
+  align-items: center;
+  gap: 40px;
   font-family: var(--font);
   font-style: normal;
   color: var(--text-dark);
-  justify-content: flex-start;
-  gap: 100px;
 }
 
 .mobile-app__info {
@@ -461,13 +462,43 @@ h1 {
 
 .mobile-app__heading {
   font-size: 3.75em;
+  max-width: 580px;
   margin: 0 0 16px;
-  font-weight: 750;
+  font-weight: 600;
   line-height: 125%;
 }
 
 .mobile-app__lead {
-  margin-top: 24px;
+  margin: 24px 0 0;
+  line-height: 150%;
+}
+
+.mobile-app__art img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .mobile-app__inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .mobile-app__info,
+  .mobile-app__heading {
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-app__heading {
+    font-size: 2em;
+  }
+
+  .mobile-app__stores {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .mobile-app__stores {
