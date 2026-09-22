@@ -50,6 +50,11 @@
   width: 100%;
   height: auto;
   border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.about__gallery img:hover {
+  transform: scale(0.95);
 }
 
 @media (max-width: 768px) {
