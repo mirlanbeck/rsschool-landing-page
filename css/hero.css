@@ -1,0 +1,83 @@
+/* Hero section (home page) and primary button. */
+
+.enjoy-section {
+  background: url(../assets/img-hero.jpg) lightgray 50% / cover no-repeat;
+  border-radius: 40px;
+  margin-top: 15px;
+}
+
+.enjoy-inner {
+  display: flex;
+  max-width: 1360px;
+  flex-direction: column;
+  padding: 100px;
+}
+
+.enjoy-heading {
+  max-width: 620px;
+  color: var(--color-on-dark);
+  font-size: var(--fs-h1);
+  font-family: Inter;
+  font-weight: 600;
+  line-height: 105%;
+  margin: 0;
+}
+
+
+.enjoy-text {
+  color: var(--color-on-dark);
+  max-width: 540px;
+  padding: 40px 0 40px 0;
+  margin: 0;
+  line-height: 150%;
+}
+
+.btn {
+  position: relative;
+  display: flex;
+  width: 200px;
+  height: 64px;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 100px;
+  background: var(--color-btn-primary-bg);
+  color: var(--color-btn-primary-text);
+  font-weight: 600;
+  line-height: 150%;
+  transition: background-color 0.2s ease;
+}
+
+.btn__icon {
+  position: absolute;
+  right: 44px;
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.btn:hover .btn__icon,
+.btn:focus-visible .btn__icon {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .enjoy-inner {
+    padding: clamp(60px, 20.8px + 10.3vw, 100px) clamp(16px, 11.3vw - 27px, 60px);
+  }
+
+  /* no hover on touch layouts, so the cup icon is always shown (as in the mockups) */
+  .btn__icon {
+    position: static;
+    margin-left: 12px;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .enjoy-heading {
+    line-height: 115%;
+  }
+
+}

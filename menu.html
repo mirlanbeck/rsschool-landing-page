@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="theme.js"></script>
+    <title>Coffee house</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <script src="menu.js" defer></script>
+</head>
+
+<body>
+    <svg class="sprite" aria-hidden="true" focusable="false">
+        <symbol id="icon-cup" viewBox="0 0 20 20"><path d="M14.167 9.76667V11.6667C14.167 14.8883 11.5553 17.5 8.33366 17.5C5.112 17.5 2.50033 14.8883 2.50033 11.6667V9.76667C2.50033 9.4353 2.76896 9.16667 3.10033 9.16667H13.567C13.8984 9.16667 14.167 9.4353 14.167 9.76667Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10.0003 7.50008C10.0003 6.66675 10.5956 5.83341 11.786 5.83341C13.101 5.83341 14.167 4.76743 14.167 3.45246V2.91675" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.66634 7.5V7.08333C6.66634 5.70262 7.78563 4.58333 9.16634 4.58333C10.0868 4.58333 10.833 3.83714 10.833 2.91667V2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13.333 9.16675H15.4163C16.5669 9.16675 17.4997 10.0995 17.4997 11.2501C17.4997 12.4007 16.5669 13.3334 15.4163 13.3334H14.1663" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+        <symbol id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5" /><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></symbol>
+        <symbol id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></symbol>
+    </svg>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a class="logo" href="index.html" aria-label="Resource Coffee House, home">
+                    <img class="logo__img logo__img--light" src="assets/logo.png" alt="" width="100" height="60">
+                    <img class="logo__img logo__img--dark" src="assets/logo-dark.png" alt="" width="100" height="60">
+                </a>
+                <nav class="navbar">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html#favorite">Favorite coffee</a></li>
+                        <li class="nav-item"><a href="index.html#about">About</a></li>
+                        <li class="nav-item"><a href="index.html#app">Mobile app</a></li>
+                        <li class="nav-item"><a href="index.html#contacts">Contact us</a></li>
+                    </ul>
+                </nav>
+                <div class="header__actions">
+                    <button class="theme-toggle" type="button" aria-label="Dark theme" aria-pressed="false">
+                        <svg class="theme-toggle__icon theme-toggle__icon--sun" width="24" height="24" aria-hidden="true"><use href="#icon-sun" /></svg>
+                        <svg class="theme-toggle__icon theme-toggle__icon--moon" width="24" height="24" aria-hidden="true"><use href="#icon-moon" /></svg>
+                    </button>
+                    <a class="menu-link" href="menu.html" aria-current="page">Menu
+                    <svg class="icon" width="20" height="20" aria-hidden="true"><use href="#icon-cup" /></svg>
+                </a>
+                <button class="burger" type="button" aria-label="Open menu" aria-expanded="false">
+                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+                        <circle cx="22" cy="22" r="21.5" stroke="currentColor" />
+                        <path class="burger__lines" d="M14 19h16M14 25h16" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" />
+                        <path class="burger__close" d="M16 16l12 12M28 16L16 28" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container">
+            <h1 class="menu__title">Behind each of our cups hides an <span class="heading__italic">amazing
+                    surprise</span></h1>
+            <div class="tabs" role="tablist" aria-label="Menu categories">
+                <button class="tab" type="button" role="tab" id="tab-coffee" aria-controls="panel-coffee"
+                    aria-selected="true">
+                    <img class="tab__icon" src="assets/coffee-tab-icon.png" alt="" width="30" height="30">Coffee
+                </button>
+                <button class="tab" type="button" role="tab" id="tab-tea" aria-controls="panel-tea"
+                    aria-selected="false" tabindex="-1">
+                    <img class="tab__icon" src="assets/tea-tab-icon.png" alt="" width="30" height="30">Tea
+                </button>
+                <button class="tab" type="button" role="tab" id="tab-dessert" aria-controls="panel-dessert"
+                    aria-selected="false" tabindex="-1">
+                    <img class="tab__icon" src="assets/dessert-tab-icon.png" alt="" width="30" height="30">Dessert
+                </button>
+            </div>
+            <div class="menu-panel" role="tabpanel" id="panel-coffee" aria-labelledby="tab-coffee">
+                <ul class="menu-list">
+                    <li class="menu-list__item">
+                        <article class="menu-card">
+                            <img class="menu-card__img" src="assets/coffee-1.jpg" alt="Irish coffee" width="310" height="310">
+                            <div class="menu-card__body">
+                                <h2 class="menu-card__title">Irish coffee</h2>
+                                <p class="menu-card__desc">Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
+                                <p class="menu-card__price">$7.00</p>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="menu-list__item">
+                        <article class="menu-card">
+                            <img class="menu-card__img" src="assets/coffee-2.jpg" alt="Kahlua coffee" width="310" height="310">
+                            <div class="menu-card__body">
+                                <h2 class="menu-card__title">Kahlua coffee</h2>
+                                <p class="menu-card__desc">Classic coffee with milk and Kahlua liqueur under a cap of frothed milk</p>
+                                <p class="menu-card__price">$7.00</p>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="menu-list__item">
+                        <article class="menu-card">
+                            <img class="menu-card__img" src="assets/coffee-3.jpg" alt="Honey raf" width="310" height="310">
+                            <div class="menu-card__body">
+                                <h2 class="menu-card__title">Honey raf</h2>
+                                <p class="menu-card__desc">Espresso with frothed milk, cream and aromatic honey</p>
+                                <p class="menu-card__price">$5.50</p>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="menu-list__item">
+                        <article class="menu-card">
+                            <img class="menu-card__img" src="assets/coffee-4.jpg" alt="Ice cappuccino" width="310" height="310">
+                            <div class="menu-card__body">
+                                <h2 class="menu-card__title">Ice cappuccino</h2>
+                                <p class="menu-card__desc">Cappuccino with soft thick foam in summer version with ice</p>
+                                <p class="menu-card__price">$5.00</p>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="menu-list__item">
+                        <article class="menu-card">
+                            <img class="menu-card__img" src="assets/coffee-5.jpg" alt="Espresso" width="310" height="310">
+                            <div class="menu-card__body">
+                                <h2 class="menu-card__title">Espresso</h2>
+                                <p class="menu-card__desc">Classic black coffee</p>
+                                <p class="menu-card__price">$4.50</p>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="menu-list__item">
+                        <article class="menu-card">
+                            <img class="menu-card__img" src="assets/coffee-6.jpg" alt="Latte" width="310" height="310">
+                            <div class="menu-card__body">
+                                <h2 class="menu-card__title">Latte</h2>
+                                <p class="menu-card__desc">Espresso coffee with the addition of steamed milk and dense milk foam</p>
+                                <p class="menu-card__price">$5.50</p>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="menu-list__item">
+                        <article class="menu-card">
+                            <img class="menu-card__img" src="assets/coffee-7.jpg" alt="Latte macchiato" width="310" height="310">
+                            <div class="menu-card__body">
+                                <h2 class="menu-card__title">Latte macchiato</h2>
+                                <p class="menu-card__desc">Espresso with frothed milk and chocolate</p>
+                                <p class="menu-card__price">$5.50</p>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="menu-list__item">
+                        <article class="menu-card">
+                            <img class="menu-card__img" src="assets/coffee-8.jpg" alt="Coffee with cognac" width="310" height="310">
+                            <div class="menu-card__body">
+                                <h2 class="menu-card__title">Coffee with cognac</h2>
+                                <p class="menu-card__desc">Fragrant black coffee with cognac and whipped cream</p>
+                                <p class="menu-card__price">$6.50</p>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
+                <button class="load-more" type="button" aria-label="Load more coffee items">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M23 4v6h-6" />
+                        <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+                    </svg>
+                </button>
+            </div>
+            <div class="menu-panel" role="tabpanel" id="panel-tea" aria-labelledby="tab-tea" hidden>
+                <ul class="menu-list">
+                    <li class="menu-list__item">
+                        <article class="menu-card">
+                            <img class="menu-card__img" src="assets/tea-1.png" alt="Moroccan" width="310" height="310">
+                            <div class="menu-card__body">
+                                <h2 class="menu-card__title">Moroccan</h2>
+                                <p class="menu-card__desc">Fragrant black tea with the addition of tangerine, cinnamon, honey, lemon and mint</p>
+                                <p class="menu-card__price">$4.50</p>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="menu-list__item">
+                        <article class="menu-card">
+                            <img class="menu-card__img" src="assets/tea-2.png" alt="Ginger" width="310" height="310">
+                            <div class="menu-card__body">
+                                <h2 class="menu-card__title">Ginger</h2>
+                                <p class="menu-card__desc">Original black tea with fresh ginger, lemon and honey</p>
+                                <p class="menu-card__price">$5.00</p>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="menu-list__item">
+                        <article class="menu-card">
+                            <img class="menu-card__img" src="assets/tea-3.png" alt="Cranberry" width="310" height="310">
+                            <div class="menu-card__body">
+                                <h2 class="menu-card__title">Cranberry</h2>
+                                <p class="menu-card__desc">Invigorating black tea with cranberry and honey</p>
+                                <p class="menu-card__price">$5.00</p>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="menu-list__item">
+                        <article class="menu-card">
+                            <img class="menu-card__img" src="assets/tea-4.png" alt="Sea buckthorn" width="310" height="310">
+                            <div class="menu-card__body">
+                                <h2 class="menu-card__title">Sea buckthorn</h2>
+                                <p class="menu-card__desc">Toning sweet black tea with sea buckthorn, fresh thyme and cinnamon</p>
+                                <p class="menu-card__price">$5.50</p>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-panel" role="tabpanel" id="panel-dessert" aria-labelledby="tab-dessert" hidden>
+                <ul class="menu-list">
+                    <li class="menu-list__item">
+                        <article class="menu-card">
+                            <img class="menu-card__img" src="assets/dessert-1.png" alt="Marble cheesecake" width="310" height="310">
+                            <div class="menu-card__body">
+                                <h2 class="menu-card__title">Marble cheesecake</h2>
+                                <p class="menu-card__desc">Philadelphia cheese with lemon zest on a light sponge cake and red currant jam</p>
+                                <p class="menu-card__price">$3.50</p>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="menu-list__item">
+                        <article class="menu-card">
+                            <img class="menu-card__img" src="assets/dessert-2.png" alt="Red velvet" width="310" height="310">
+                            <div class="menu-card__body">
+                                <h2 class="menu-card__title">Red velvet</h2>
+                                <p class="menu-card__desc">Layer cake with cream cheese frosting</p>
+                                <p class="menu-card__price">$4.00</p>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="menu-list__item">
+                        <article class="menu-card">
+                            <img class="menu-card__img" src="assets/dessert-3.png" alt="Cheesecakes" width="310" height="310">
+                            <div class="menu-card__body">
+                                <h2 class="menu-card__title">Cheesecakes</h2>
+                                <p class="menu-card__desc">Soft cottage cheese pancakes with sour cream and fresh berries and sprinkled with powdered sugar</p>
+                                <p class="menu-card__price">$4.50</p>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="menu-list__item">
+                        <article class="menu-card">
+                            <img class="menu-card__img" src="assets/dessert-4.png" alt="Creme brulee" width="310" height="310">
+                            <div class="menu-card__body">
+                                <h2 class="menu-card__title">Creme brulee</h2>
+                                <p class="menu-card__desc">Delicate creamy dessert in a caramel basket with wild berries</p>
+                                <p class="menu-card__price">$4.00</p>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="menu-list__item">
+                        <article class="menu-card">
+                            <img class="menu-card__img" src="assets/dessert-5.png" alt="Pancakes" width="310" height="310">
+                            <div class="menu-card__body">
+                                <h2 class="menu-card__title">Pancakes</h2>
+                                <p class="menu-card__desc">Tender pancakes with strawberry jam and fresh strawberries</p>
+                                <p class="menu-card__price">$4.50</p>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="menu-list__item">
+                        <article class="menu-card">
+                            <img class="menu-card__img" src="assets/dessert-6.png" alt="Honey cake" width="310" height="310">
+                            <div class="menu-card__body">
+                                <h2 class="menu-card__title">Honey cake</h2>
+                                <p class="menu-card__desc">Classic honey cake with delicate custard</p>
+                                <p class="menu-card__price">$4.50</p>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="menu-list__item">
+                        <article class="menu-card">
+                            <img class="menu-card__img" src="assets/dessert-7.png" alt="Chocolate cake" width="310" height="310">
+                            <div class="menu-card__body">
+                                <h2 class="menu-card__title">Chocolate cake</h2>
+                                <p class="menu-card__desc">Cake with hot chocolate filling and nuts with dried apricots</p>
+                                <p class="menu-card__price">$5.50</p>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="menu-list__item">
+                        <article class="menu-card">
+                            <img class="menu-card__img" src="assets/dessert-8.png" alt="Black forest" width="310" height="310">
+                            <div class="menu-card__body">
+                                <h2 class="menu-card__title">Black forest</h2>
+                                <p class="menu-card__desc">A combination of thin sponge cake with cherry jam and light chocolate mousse</p>
+                                <p class="menu-card__price">$6.50</p>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
+                <button class="load-more" type="button" aria-label="Load more dessert items">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M23 4v6h-6" />
+                        <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </main>
+    <footer class="footer" id="contacts">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__info">
+                    <h2 class="footer__heading">
+                        <span class="heading__light">Sip, Savor, Smile.</span>
+                        <span class="heading__accent">It’s coffee time!</span>
+                    </h2>
+                    <ul class="social">
+                        <li>
+                            <a class="social__link" href="https://twitter.com/" target="_blank" rel="noopener noreferrer"
+                                aria-label="Twitter">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="social__link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
+                                aria-label="Instagram">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><path d="M17.5 6.5h.01" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="social__link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
+                                aria-label="Facebook">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__contacts">
+                    <h3 class="contact__title">Contact us</h3>
+                    <ul class="contact__list">
+                        <li>
+                            <a class="contact__link" href="https://www.google.com/maps/search/?api=1&query=8558+Green+Rd.,+LA"
+                                target="_blank" rel="noopener noreferrer">
+                                <img src="assets/pin-alt.svg" alt="">8558 Green Rd., LA
+                            </a>
+                        </li>
+                        <li>
+                            <a class="contact__link" href="tel:+16035550123">
+                                <img src="assets/phone.svg" alt="">+1&nbsp;(603)&nbsp;555&#8209;0123
+                            </a>
+                        </li>
+                        <li class="contact__item">
+                            <img src="assets/clock.svg" alt="">Mon-Sat: 9:00 AM – 23:00 PM
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

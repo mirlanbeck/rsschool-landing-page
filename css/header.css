@@ -1,0 +1,146 @@
+/* Header: logo, navigation, Menu link, burger button (shared by both pages). */
+
+.header-inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+}
+
+.navbar {
+  justify-self: center;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 40px);
+}
+
+.nav-item {
+  font-family: var(--font);
+  font-size: 1em;
+}
+
+.header-inner a {
+  color: var(--color-text);
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.logo {
+  display: inline-flex;
+}
+
+/* two logo files: dark text for the light theme, light text for the dark theme */
+.logo__img--dark,
+:root[data-theme="dark"] .logo__img--light {
+  display: none;
+}
+
+:root[data-theme="dark"] .logo__img--dark {
+  display: block;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.icon {
+  display: block;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  background: var(--color-hover-bg);
+  color: var(--color-hover-text);
+}
+
+/* the icon shows the active theme */
+.theme-toggle__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.theme-toggle__icon--moon,
+:root[data-theme="dark"] .theme-toggle__icon--sun {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle__icon--moon {
+  display: block;
+}
+
+.menu-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-underline-offset: 6px;
+}
+
+.menu-link:hover,
+.nav-item a:hover {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.burger {
+  display: none;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.burger__close,
+.burger[aria-expanded="true"] .burger__lines {
+  display: none;
+}
+
+.burger[aria-expanded="true"] .burger__close {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .navbar,
+  .menu-link {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .header-inner {
+    grid-template-columns: 1fr auto;
+  }
+
+  .header__actions {
+    gap: 12px;
+  }
+}
+
+.menu-link[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}

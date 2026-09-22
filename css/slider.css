@@ -1,0 +1,133 @@
+/* "Choose your favorite coffee" slider (home page). */
+
+.favorite__section {
+  margin-top: 100px;
+}
+
+.favorite__inner {
+  text-align: center;
+  font-family: var(--font);
+  font-style: normal;
+  color: var(--color-text);
+}
+
+.slider__viewport {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.slider__heading {
+  font-size: var(--fs-h2);
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.slider__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  border: 1px solid var(--color-border-strong);
+  background-color: transparent;
+  color: var(--color-text);
+  border-radius: 100px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.slider__arrow:hover,
+.slider__arrow:focus-visible {
+  background-color: var(--color-hover-bg);
+  color: var(--color-hover-text);
+}
+
+.slider__arrow--prev {
+  left: 0;
+}
+
+.slider__arrow--next {
+  right: 0;
+}
+
+.slider__track {
+  display: flex;
+  flex-wrap: nowrap;
+  transition: transform 300ms ease-out;
+  z-index: 0;
+}
+
+.slide {
+  flex: 0 0 100%;
+  box-sizing: border-box;
+}
+
+.card__image {
+  display: block;
+  width: min(480px, 100%);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.card__desc {
+  max-width: 460px;
+  margin-inline: auto;
+}
+
+.card__heading {
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.card__desc {
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.card__price {
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.slider__bullets {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.bullet {
+  width: 40px;
+  height: 4px;
+  padding: 0;
+  border: 0;
+  border-radius: 100px;
+  background: var(--color-progress-track);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.progress__fill {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: var(--color-border-strong);
+}
+
+@media (max-width: 480px) {
+  .slider__arrow {
+    display: none;
+  }
+
+}

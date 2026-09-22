@@ -1,0 +1,59 @@
+/* Design tokens: layout, type scale, and the light/dark color system.
+   Palette values come from the Figma style guide; components only use the --color-* tokens. */
+
+:root {
+  /* layout */
+  --container-max: 1440px;
+  --gutter: 40px;
+
+  /* typography */
+  --font: "Inter", sans-serif;
+  /* fluid type: 32px/42px at 380px viewport -> 60px/72px at 768px, capped above */
+  --fs-h1: clamp(2.625rem, 12.6px + 7.73vw, 4.5rem);
+  --fs-h2: clamp(2rem, 4.56px + 7.22vw, 3.75rem);
+
+  /* raw palette (Figma) */
+  --palette-charcoal: #403f3d;
+  --palette-beige: #e1d4c9;
+  --palette-accent: #b0907a;
+  --palette-taupe: #665f55;
+  --palette-stone: #c1b6ad;
+  --background-backdrop: rgb(64 63 61 / 0.8); /* charcoal at 80%, for overlays */
+
+  /* fixed in both themes: text on the hero photo, the footer surface, the hero button */
+  --color-on-dark: var(--palette-beige);
+  --color-on-dark-border: var(--palette-stone);
+  --color-surface-dark: var(--palette-taupe);
+  --color-btn-primary-bg: var(--palette-beige);
+  --color-btn-primary-text: var(--palette-charcoal);
+
+  /* themed: light (default) */
+  color-scheme: light;
+  --color-bg: var(--palette-beige);
+  --color-text: var(--palette-charcoal);
+  --color-accent: var(--palette-accent);
+  --color-border-subtle: var(--palette-stone);
+  --color-border-strong: var(--palette-taupe);
+  --color-hover-bg: var(--palette-taupe);
+  --color-hover-text: var(--palette-beige);
+  --color-progress-track: var(--palette-stone);
+}
+
+/* themed: dark */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: var(--palette-charcoal);
+  --color-text: var(--palette-beige);
+  --color-accent: var(--palette-accent);
+  --color-border-subtle: var(--palette-taupe);
+  --color-border-strong: var(--palette-stone);
+  --color-hover-bg: var(--palette-beige);
+  --color-hover-text: var(--palette-charcoal);
+  --color-progress-track: var(--palette-taupe);
+}
+
+@media (max-width: 480px) {
+  :root {
+    --gutter: 16px;
+  }
+}
