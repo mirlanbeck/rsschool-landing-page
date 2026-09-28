@@ -22,20 +22,36 @@ function formatPrice(value) {
   return `$${Number(value).toFixed(2)}`;
 }
 
+// product text is our own data file, not user input, but it's still injected
+// into HTML via template strings, so escape it defensively
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, (c) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;",
+  })[c]);
+}
+
 function itemsInCategory(cat) {
   return products.filter((product) => product.category === cat);
 }
 
 function cardMarkup(product) {
+  const name = escapeHtml(product.name);
+  const alt = escapeHtml(product.alt);
+  const description = escapeHtml(product.description);
+  const price = formatPrice(product.price);
   return `
     <li class="menu-list__item">
       <article class="menu-card" data-id="${product.id}" tabindex="0" role="button"
-        aria-label="${product.name}, ${formatPrice(product.price)}">
-        <img class="menu-card__img" src="${product.image}" alt="${product.alt}" width="310" height="310">
+        aria-label="${name}, ${price}">
+        <img class="menu-card__img" src="${product.image}" alt="${alt}" width="310" height="310">
         <div class="menu-card__body">
-          <h2 class="menu-card__title">${product.name}</h2>
-          <p class="menu-card__desc">${product.description}</p>
-          <p class="menu-card__price">${formatPrice(product.price)}</p>
+          <h2 class="menu-card__title">${name}</h2>
+          <p class="menu-card__desc">${description}</p>
+          <p class="menu-card__price">${price}</p>
         </div>
       </article>
     </li>`;

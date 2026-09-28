@@ -114,5 +114,4 @@
 .store:focus-visible {
   background: var(--color-hover-bg);
   color: var(--color-hover-text);
-  outline: none;
 }

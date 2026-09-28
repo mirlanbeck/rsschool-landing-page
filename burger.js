@@ -7,6 +7,9 @@
 
   const closeBtn = overlay.querySelector(".nav-overlay__close");
   const links = overlay.querySelectorAll("a");
+  // everything the overlay covers: made inert while it's open, so a keyboard
+  // or screen-reader user can't tab or navigate into content hidden behind it
+  const rest = document.querySelectorAll("body > header, body > main, body > footer");
 
   function isOpen() {
     return overlay.classList.contains("is-open");
@@ -20,8 +23,10 @@
     overlay.classList.add("is-open");
     btn.setAttribute("aria-expanded", "true");
     btn.setAttribute("aria-label", "Close menu");
+    rest.forEach((el) => (el.inert = true));
     window.lockScroll();
     document.addEventListener("keydown", onKeydown);
+    closeBtn.focus();
   }
 
   function close() {
@@ -29,8 +34,10 @@
     overlay.classList.remove("is-open");
     btn.setAttribute("aria-expanded", "false");
     btn.setAttribute("aria-label", "Open menu");
+    rest.forEach((el) => (el.inert = false));
     window.unlockScroll();
     document.removeEventListener("keydown", onKeydown);
+    btn.focus();
   }
 
   btn.addEventListener("click", () => (isOpen() ? close() : open()));
