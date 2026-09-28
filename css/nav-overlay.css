@@ -1,0 +1,89 @@
+/* Burger menu overlay (≤768px, shared by both pages). */
+
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 40px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0s linear 0.25s;
+}
+
+.nav-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.nav-overlay__top {
+  /* .container centers itself via margin-inline:auto, which (being a flex
+     child of .nav-overlay's column layout) shrinks it to content width
+     instead of stretching it — force full width so space-between has
+     room to push the logo and close button to opposite edges */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-overlay__close {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.nav-overlay__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(48px, 12vw, 96px);
+}
+
+.nav-overlay__links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(28px, 6vw, 48px);
+}
+
+.nav-overlay__links a,
+.nav-overlay__menu-link {
+  color: var(--color-text);
+  font-size: 2em;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.nav-overlay__links a:hover,
+.nav-overlay__links a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+@media (min-width: 769px) {
+  .nav-overlay {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-overlay {
+    transition: none;
+  }
+}
