@@ -23,7 +23,6 @@
   margin: 0;
 }
 
-
 .enjoy-text {
   color: var(--color-on-dark);
   max-width: 540px;
@@ -62,9 +61,10 @@
   opacity: 1;
 }
 
-@media (max-width: 768px) {
+@media (width < 769px) {
   .enjoy-inner {
-    padding: clamp(60px, 20.8px + 10.3vw, 100px) clamp(16px, 11.3vw - 27px, 60px);
+    padding: clamp(60px, 20.8px + 10.3vw, 100px)
+      clamp(16px, 11.3vw - 27px, 60px);
   }
 
   /* no hover on touch layouts, so the cup icon is always shown (as in the mockups) */
@@ -79,5 +79,4 @@
   .enjoy-heading {
     line-height: 115%;
   }
-
 }

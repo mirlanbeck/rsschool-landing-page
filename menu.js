@@ -2,7 +2,7 @@
 // A card and the modal it opens (see modal.js) read the same product object,
 // so nothing about a product is written twice.
 
-const MOBILE_BREAKPOINT = 768; // matches css/menu.css
+const MOBILE_QUERY = window.matchMedia("(width < 769px)"); // matches css/menu.css
 const INITIAL_VISIBLE = 4; // cards shown per category on mobile before "load more"
 
 const tabs = Array.from(document.querySelectorAll("[role='tab']"));
@@ -15,7 +15,7 @@ let category = tabs[0]?.dataset.category ?? "coffee";
 let expanded = false; // reset whenever the category changes
 
 function isMobile() {
-  return window.innerWidth <= MOBILE_BREAKPOINT;
+  return MOBILE_QUERY.matches;
 }
 
 function formatPrice(value) {
@@ -25,13 +25,17 @@ function formatPrice(value) {
 // product text is our own data file, not user input, but it's still injected
 // into HTML via template strings, so escape it defensively
 function escapeHtml(str) {
-  return String(str).replace(/[&<>"']/g, (c) => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;",
-  })[c]);
+  return String(str).replace(
+    /[&<>"']/g,
+    (c) =>
+      ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;",
+      })[c],
+  );
 }
 
 function itemsInCategory(cat) {
@@ -63,7 +67,8 @@ function render() {
   const visible = showAll ? items : items.slice(0, INITIAL_VISIBLE);
 
   list.innerHTML = visible.map(cardMarkup).join("");
-  loadMoreBtn.style.display = !showAll && items.length > visible.length ? "flex" : "none";
+  loadMoreBtn.style.display =
+    !showAll && items.length > visible.length ? "flex" : "none";
 }
 
 function selectCategory(tab) {

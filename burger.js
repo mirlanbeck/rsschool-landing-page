@@ -9,7 +9,9 @@
   const links = overlay.querySelectorAll("a");
   // everything the overlay covers: made inert while it's open, so a keyboard
   // or screen-reader user can't tab or navigate into content hidden behind it
-  const rest = document.querySelectorAll("body > header, body > main, body > footer");
+  const rest = document.querySelectorAll(
+    "body > header, body > main, body > footer",
+  );
 
   function isOpen() {
     return overlay.classList.contains("is-open");
@@ -47,6 +49,6 @@
   // the overlay and its trigger are ≤768px-only; if the window is widened
   // past that while it's open, close it so scroll and aria state don't get stuck
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 768) close();
+    if (window.matchMedia("(width >= 769px)").matches) close();
   });
 })();

@@ -76,7 +76,7 @@
   text-underline-offset: 6px;
 }
 
-@media (min-width: 769px) {
+@media (width >= 769px) {
   .nav-overlay {
     display: none;
   }
