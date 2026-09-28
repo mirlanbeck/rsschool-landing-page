@@ -52,7 +52,7 @@
 
 .menu-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(310px, 100%), 310px));
+  grid-template-columns: repeat(auto-fill, minmax(min(310px, 100%), 1fr));
   justify-content: center;
   gap: 40px;
 }
@@ -167,17 +167,9 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (width < 769px) {
   .menu__title {
     max-width: 680px;
-  }
-
-  .menu-list__item:nth-child(n + 5) {
-    display: none;
-  }
-
-  .load-more {
-    display: flex;
   }
 }
 

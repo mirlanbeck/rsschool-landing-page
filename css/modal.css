@@ -1,0 +1,219 @@
+/* Product modal (menu page): opens on card click, shows one product's data
+   with selectable size/additives and a live total. Layout numbers below
+   (800/768/458/438...) come straight from the Figma spec; height is left to
+   flow naturally since content length differs per category. */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--gutter);
+  background: var(--background-backdrop);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.25s ease,
+    visibility 0s linear 0.25s;
+}
+
+.modal-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.25s ease;
+}
+
+.modal {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 16px;
+  border-radius: 40px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  transform: scale(0.96);
+  transition: transform 0.25s ease;
+}
+
+.modal-overlay.is-open .modal {
+  transform: scale(1);
+}
+
+.modal__image {
+  flex: 0 0 310px;
+  width: 310px;
+  height: 310px;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.modal__body {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 20px;
+}
+
+.modal__header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal__title {
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.modal__desc {
+  margin: 0;
+  line-height: 150%;
+}
+
+.modal__field-label {
+  margin: 0 0 12px;
+  line-height: 150%;
+}
+
+.modal__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.modal__option {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 46px;
+  padding: 0 16px;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 100px;
+  background: transparent;
+  color: var(--color-text);
+  font-weight: 600;
+  line-height: 150%;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.modal__option--size {
+  /* 116px is the Figma width, but it's a floor, not a cap — "200 ml" etc.
+     must never wrap to a second line, at any viewport width */
+  min-width: 116px;
+}
+
+.modal__option[aria-checked="true"],
+.modal__option[aria-pressed="true"] {
+  border-color: var(--color-hover-bg);
+  background: var(--color-hover-bg);
+  color: var(--color-hover-text);
+}
+
+.modal__option-badge {
+  display: inline-flex;
+  flex: 0 0 24px;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-border-subtle);
+  color: var(--color-bg);
+  font-size: 0.75em;
+}
+
+.modal__option[aria-checked="true"] .modal__option-badge,
+.modal__option[aria-pressed="true"] .modal__option-badge {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.modal__total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.modal__alert {
+  display: flex;
+  gap: 8px;
+  padding: 12px 0;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.modal__alert p {
+  margin: 0;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: 0;
+}
+
+.modal__alert-icon {
+  flex: 0 0 16px;
+  margin-top: 3px;
+}
+
+.modal__close {
+  width: 100%;
+  height: 44px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 100px;
+  background: transparent;
+  color: var(--color-text);
+  font-weight: 600;
+  line-height: 150%;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.modal__close:hover,
+.modal__close:focus-visible {
+  background: var(--color-hover-bg);
+  color: var(--color-hover-text);
+}
+
+@media (max-width: 900px) {
+  .modal {
+    max-width: 688px;
+  }
+}
+
+/* below this, there's no room for the fixed 310px image beside 438px-wide
+   content, so the image drops and the description becomes the whole modal */
+@media (max-width: 620px) {
+  .modal__image {
+    display: none;
+  }
+
+  .modal__body {
+    padding-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal-overlay,
+  .modal {
+    transition: none;
+  }
+}

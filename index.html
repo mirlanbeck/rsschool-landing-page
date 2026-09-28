@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="theme.js"></script>
+    <script src="scroll-lock.js" defer></script>
+    <script src="burger.js" defer></script>
     <title>Coffee house</title>
     <link rel="icon" type="image/png" href="assets/logo.png">
     <link rel="stylesheet" href="css/tokens.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/nav-overlay.css">
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/slider.css">
     <link rel="stylesheet" href="css/about.css">
@@ -47,7 +50,7 @@
                     <img class="logo__img logo__img--light" src="assets/logo.png" alt="" width="100" height="60">
                     <img class="logo__img logo__img--dark" src="assets/logo-dark.png" alt="" width="100" height="60">
                 </a>
-                <nav class="navbar">
+                <nav class="navbar" aria-label="Primary">
                     <ul class="nav-list">
                         <li class="nav-item"><a href="#favorite">Favorite coffee</a></li>
                         <li class="nav-item"><a href="#about">About</a></li>
@@ -63,7 +66,7 @@
                     <a class="menu-link" href="menu.html">Menu
                     <svg class="icon" width="20" height="20" aria-hidden="true"><use href="#icon-cup" /></svg>
                 </a>
-                <button class="burger" type="button" aria-label="Open menu" aria-expanded="false">
+                <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-overlay">
                     <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
                         <circle cx="22" cy="22" r="21.5" stroke="currentColor" />
                         <path class="burger__lines" d="M14 19h16M14 25h16" stroke="currentColor" stroke-width="1.5"
@@ -76,6 +79,32 @@
             </div>
         </div>
     </header>
+    <div class="nav-overlay" id="nav-overlay">
+        <div class="container nav-overlay__top">
+            <a class="logo" href="index.html" aria-label="Resource Coffee House, home">
+                <img class="logo__img logo__img--light" src="assets/logo.png" alt="" width="100" height="60">
+                <img class="logo__img logo__img--dark" src="assets/logo-dark.png" alt="" width="100" height="60">
+            </a>
+            <button class="nav-overlay__close" type="button" aria-label="Close menu">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+                    <circle cx="22" cy="22" r="21.5" stroke="currentColor" />
+                    <path d="M16 16l12 12M28 16L16 28" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" />
+                </svg>
+            </button>
+        </div>
+        <nav class="nav-overlay__body" aria-label="Mobile">
+            <ul class="nav-overlay__links">
+                <li><a href="index.html#favorite">Favorite coffee</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#app">Mobile app</a></li>
+                <li><a href="index.html#contacts">Contact us</a></li>
+            </ul>
+            <a class="menu-link nav-overlay__menu-link" href="menu.html">Menu
+                <svg class="icon" width="20" height="20" aria-hidden="true"><use href="#icon-cup" /></svg>
+            </a>
+        </nav>
+    </div>
     <main class="main">
         <div class="container">
             <section class="enjoy-section">

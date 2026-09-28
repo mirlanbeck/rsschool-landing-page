@@ -21,7 +21,7 @@
   line-height: 125%;
 }
 
-@media (min-width: 1201px) {
+@media (width > 1200px) {
   /* keeps the 1440px heading on three lines like the mockup */
   .about__heading {
     letter-spacing: -0.005em;
@@ -57,7 +57,7 @@
   transform: scale(0.95);
 }
 
-@media (max-width: 768px) {
+@media (width < 769px) {
   .about__gallery {
     grid-template-columns: 1fr;
   }

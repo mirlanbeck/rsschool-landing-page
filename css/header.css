@@ -94,6 +94,10 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  color: var(--color-text);
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 150%;
   text-underline-offset: 6px;
 }
 
@@ -121,9 +125,9 @@
   display: inline;
 }
 
-@media (max-width: 768px) {
+@media (width < 769px) {
   .navbar,
-  .menu-link {
+  .header-inner .menu-link {
     display: none;
   }
 
