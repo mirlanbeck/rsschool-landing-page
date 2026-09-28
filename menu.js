@@ -96,16 +96,16 @@ loadMoreBtn.addEventListener("click", () => {
   panel.focus();
 });
 
-function openProductById(id) {
+function openProductById(id, trigger) {
   const product = products.find((p) => p.id === id);
   if (product && typeof window.openProductModal === "function") {
-    window.openProductModal(product);
+    window.openProductModal(product, trigger);
   }
 }
 
 list.addEventListener("click", (e) => {
   const card = e.target.closest(".menu-card");
-  if (card) openProductById(card.dataset.id);
+  if (card) openProductById(card.dataset.id, card);
 });
 
 list.addEventListener("keydown", (e) => {
@@ -113,7 +113,7 @@ list.addEventListener("keydown", (e) => {
   const card = e.target.closest(".menu-card");
   if (!card) return;
   e.preventDefault();
-  openProductById(card.dataset.id);
+  openProductById(card.dataset.id, card);
 });
 
 let resizeTimer;
