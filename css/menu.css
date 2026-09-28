@@ -171,14 +171,6 @@
   .menu__title {
     max-width: 680px;
   }
-
-  .menu-list__item:nth-child(n + 5) {
-    display: none;
-  }
-
-  .load-more {
-    display: flex;
-  }
 }
 
 @media (max-width: 480px) {

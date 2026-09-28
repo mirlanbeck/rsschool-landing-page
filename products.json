@@ -31,9 +31,11 @@
         "name": "Syrup",
         "add-price": "0.50"
       }
-    ]
+    ],
+    "id": "coffee-irish-coffee",
+    "image": "assets/coffee-1.jpg",
+    "alt": "Irish coffee"
   },
-
   {
     "name": "Kahlua coffee",
     "description": "Classic coffee with milk and Kahlua liqueur under a cap of frothed milk",
@@ -66,9 +68,11 @@
         "name": "Syrup",
         "add-price": "0.50"
       }
-    ]
+    ],
+    "id": "coffee-kahlua-coffee",
+    "image": "assets/coffee-2.jpg",
+    "alt": "Kahlua coffee"
   },
-
   {
     "name": "Honey raf",
     "description": "Espresso with frothed milk, cream and aromatic honey",
@@ -101,9 +105,11 @@
         "name": "Syrup",
         "add-price": "0.50"
       }
-    ]
+    ],
+    "id": "coffee-honey-raf",
+    "image": "assets/coffee-3.jpg",
+    "alt": "Honey raf"
   },
-
   {
     "name": "Ice cappuccino",
     "description": "Cappuccino with soft thick foam in summer version with ice",
@@ -136,9 +142,11 @@
         "name": "Syrup",
         "add-price": "0.50"
       }
-    ]
+    ],
+    "id": "coffee-ice-cappuccino",
+    "image": "assets/coffee-4.jpg",
+    "alt": "Ice cappuccino"
   },
-
   {
     "name": "Espresso",
     "description": "Classic black coffee",
@@ -171,9 +179,11 @@
         "name": "Syrup",
         "add-price": "0.50"
       }
-    ]
+    ],
+    "id": "coffee-espresso",
+    "image": "assets/coffee-5.jpg",
+    "alt": "Espresso"
   },
-
   {
     "name": "Latte",
     "description": "Espresso coffee with the addition of steamed milk and dense milk foam",
@@ -206,9 +216,11 @@
         "name": "Syrup",
         "add-price": "0.50"
       }
-    ]
+    ],
+    "id": "coffee-latte",
+    "image": "assets/coffee-6.jpg",
+    "alt": "Latte"
   },
-
   {
     "name": "Latte macchiato",
     "description": "Espresso with frothed milk and chocolate",
@@ -241,9 +253,11 @@
         "name": "Syrup",
         "add-price": "0.50"
       }
-    ]
+    ],
+    "id": "coffee-latte-macchiato",
+    "image": "assets/coffee-7.jpg",
+    "alt": "Latte macchiato"
   },
-
   {
     "name": "Coffee with cognac",
     "description": "Fragrant black coffee with cognac and whipped cream",
@@ -276,9 +290,11 @@
         "name": "Syrup",
         "add-price": "0.50"
       }
-    ]
+    ],
+    "id": "coffee-coffee-with-cognac",
+    "image": "assets/coffee-8.jpg",
+    "alt": "Coffee with cognac"
   },
-
   {
     "name": "Moroccan",
     "description": "Fragrant black tea with the addition of tangerine, cinnamon, honey, lemon and mint",
@@ -311,9 +327,11 @@
         "name": "Syrup",
         "add-price": "0.50"
       }
-    ]
+    ],
+    "id": "tea-moroccan",
+    "image": "assets/tea-1.png",
+    "alt": "Moroccan"
   },
-
   {
     "name": "Ginger",
     "description": "Original black tea with fresh ginger, lemon and honey",
@@ -346,9 +364,11 @@
         "name": "Syrup",
         "add-price": "0.50"
       }
-    ]
+    ],
+    "id": "tea-ginger",
+    "image": "assets/tea-2.png",
+    "alt": "Ginger"
   },
-
   {
     "name": "Cranberry",
     "description": "Invigorating black tea with cranberry and honey",
@@ -381,9 +401,11 @@
         "name": "Syrup",
         "add-price": "0.50"
       }
-    ]
+    ],
+    "id": "tea-cranberry",
+    "image": "assets/tea-3.png",
+    "alt": "Cranberry"
   },
-
   {
     "name": "Sea buckthorn",
     "description": "Toning sweet black tea with sea buckthorn, fresh thyme and cinnamon",
@@ -416,9 +438,11 @@
         "name": "Syrup",
         "add-price": "0.50"
       }
-    ]
+    ],
+    "id": "tea-sea-buckthorn",
+    "image": "assets/tea-4.png",
+    "alt": "Sea buckthorn"
   },
-
   {
     "name": "Marble cheesecake",
     "description": "Philadelphia cheese with lemon zest on a light sponge cake and red currant jam",
@@ -451,9 +475,11 @@
         "name": "Jam",
         "add-price": "0.50"
       }
-    ]
+    ],
+    "id": "dessert-marble-cheesecake",
+    "image": "assets/dessert-1.png",
+    "alt": "Marble cheesecake"
   },
-
   {
     "name": "Red velvet",
     "description": "Layer cake with cream cheese frosting",
@@ -486,9 +512,11 @@
         "name": "Jam",
         "add-price": "0.50"
       }
-    ]
+    ],
+    "id": "dessert-red-velvet",
+    "image": "assets/dessert-2.png",
+    "alt": "Red velvet"
   },
-
   {
     "name": "Cheesecakes",
     "description": "Soft cottage cheese pancakes with sour cream and fresh berries and sprinkled with powdered sugar",
@@ -521,9 +549,11 @@
         "name": "Jam",
         "add-price": "0.50"
       }
-    ]
+    ],
+    "id": "dessert-cheesecakes",
+    "image": "assets/dessert-3.png",
+    "alt": "Cheesecakes"
   },
-
   {
     "name": "Creme brulee",
     "description": "Delicate creamy dessert in a caramel basket with wild berries",
@@ -556,9 +586,11 @@
         "name": "Jam",
         "add-price": "0.50"
       }
-    ]
+    ],
+    "id": "dessert-creme-brulee",
+    "image": "assets/dessert-4.png",
+    "alt": "Creme brulee"
   },
-
   {
     "name": "Pancakes",
     "description": "Tender pancakes with strawberry jam and fresh strawberries",
@@ -591,9 +623,11 @@
         "name": "Jam",
         "add-price": "0.50"
       }
-    ]
+    ],
+    "id": "dessert-pancakes",
+    "image": "assets/dessert-5.png",
+    "alt": "Pancakes"
   },
-
   {
     "name": "Honey cake",
     "description": "Classic honey cake with delicate custard",
@@ -626,9 +660,11 @@
         "name": "Jam",
         "add-price": "0.50"
       }
-    ]
+    ],
+    "id": "dessert-honey-cake",
+    "image": "assets/dessert-6.png",
+    "alt": "Honey cake"
   },
-
   {
     "name": "Chocolate cake",
     "description": "Cake with hot chocolate filling and nuts with dried apricots",
@@ -661,9 +697,11 @@
         "name": "Jam",
         "add-price": "0.50"
       }
-    ]
+    ],
+    "id": "dessert-chocolate-cake",
+    "image": "assets/dessert-7.png",
+    "alt": "Chocolate cake"
   },
-
   {
     "name": "Black forest",
     "description": "A combination of thin sponge cake with cherry jam and light chocolate mousse",
@@ -696,6 +734,9 @@
         "name": "Jam",
         "add-price": "0.50"
       }
-    ]
+    ],
+    "id": "dessert-black-forest",
+    "image": "assets/dessert-8.png",
+    "alt": "Black forest"
   }
 ]
